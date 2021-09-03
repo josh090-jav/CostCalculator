@@ -1,5 +1,10 @@
 package com.oladad;
 
+/*
+For this to be truly usable, there must be a Class to set the prices
+of the various forms of printing.
+* */
+
 import java.io.Serializable;
 import java.util.Locale;
 

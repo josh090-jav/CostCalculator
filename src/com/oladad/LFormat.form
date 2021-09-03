@@ -5,7 +5,9 @@
     <constraints>
       <xy x="20" y="20" width="611" height="400"/>
     </constraints>
-    <properties/>
+    <properties>
+      <maximumSize width="611" height="252"/>
+    </properties>
     <border type="none"/>
     <children>
       <grid id="b010f" binding="keyIdFields" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -62,6 +64,7 @@
                 <properties>
                   <font swing-font="List.font"/>
                   <selectionMode value="0"/>
+                  <valueIsAdjusting value="false"/>
                 </properties>
               </component>
             </children>
@@ -204,6 +207,8 @@
             </constraints>
             <properties>
               <text value="0"/>
+              <toolTipText value="Press Enter then Print !"/>
+              <verifyInputWhenFocusTarget value="false"/>
             </properties>
           </component>
           <component id="1211a" class="javax.swing.JLabel">

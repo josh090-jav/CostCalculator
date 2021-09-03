@@ -68,10 +68,11 @@ public class LFormat implements Serializable {
         frame.setContentPane(panel1);
         //frame.setLocation(350, 180);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setResizable(false);
         l1 = new DefaultListModel();list1.setModel(l1);
         copiedList = new ArrayList<LFormatJob>();
         namefield.setText(custName);
-        setLookAndFeel();
+        //setLookAndFeel();
 
         frame.pack();
         addButton.addActionListener(new ActionListener() {
@@ -100,6 +101,7 @@ public class LFormat implements Serializable {
                     removeJob();
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "No item selected");
                 }
                 /*I have to put a try catch around this to display an optionpane to announce, nothing
                 * being selected*/
@@ -110,6 +112,7 @@ public class LFormat implements Serializable {
             public void actionPerformed(ActionEvent e) {
                 //The plan here is to make this action button call a
                 //method in the homepage to deserialize data onto the jlist
+                frame.setVisible(false);
             }
         });
 
@@ -125,6 +128,7 @@ public class LFormat implements Serializable {
 
             }
         });
+        printButton.addActionListener(new LargeFormatReceipt(copiedList));
     }
 
 
@@ -216,7 +220,7 @@ public class LFormat implements Serializable {
 
     void removeJob() throws IOException {
         if(isSelected()) {
-            System.out.println("there is a selection");
+            //System.out.println("there is a selection");
             int num = list1.getSelectedIndex();
             copiedList.remove(num);
             refreshList();
